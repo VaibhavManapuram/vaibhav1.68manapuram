@@ -29,7 +29,7 @@
                 t.push(n[2] = i);
                 var a, c = document.createElement("script");
                 c.charset = "utf-8", c.timeout = 120, o.nc && c.setAttribute("nonce", o.nc), c.src = function (e) {
-                    return o.p + "./" + ({
+                    return "./" + ({
                         0: "vendors-background",
                         1: "background-image-fx-liquid~background-image-fx-parallax~background-image-fx-refracted-circles~backgr~31f89b22",
                         2: "gallery-fullscreen-slideshow~gallery-slideshow~lightbox",
