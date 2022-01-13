@@ -659,11 +659,11 @@ window.Typekit.config = {
     T.prototype.load = function (a, b, c) {
         var d = this;
         c = c || {};
-        if (this.j && (a = location.hostname, !this.j.has(a))) {
+        /*if (this.j && (a = location.hostname, !this.j.has(a))) {
             console.error('Typekit: the domain "' + a + '" isn\'t in the list of published domains for kit "' + this.w + '".');
             B(new A(this.b, c, {}));
             return
-        }
+        }*/
         a = c.timeout;
         var e = !!c.async, f = oa(), g = qa(this.u, f);
         c = new A(this.b, c, {
