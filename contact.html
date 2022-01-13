@@ -499,8 +499,29 @@
             color: hsl(315, 0%, 100%);
         }
     </style>
+    <script src="./jquery.js" ></script>
     <script>
         function formSubmit(form) {
+            $(form).addClass("submitting");
+            $("#submitButton").val("Submitting...");
+            const formData = $(form)
+                .serializeArray()
+                .reduce(
+                    (obj, field) => {
+                        obj[field.name]=field.value;
+                        return obj
+                    },
+                    {}
+                );
+
+            $.post(
+                "https://script.google.com/macros/s/AKfycbw-fBfccNApdvQeXO77fyeUUry5-0zSlNyx0Zg_N7GOCka2kf5iprThJJQ3BKfVavFInQ/exec",
+                formData
+            ).done(function( data ) {
+                $(form).removeClass("submitting");
+                $("#submitButton").text("Send");
+                $(".form-inner-wrapper").text("Thank You!");
+            });
             return false;
         }
     </script>
@@ -691,7 +712,6 @@
                                                 <div class="form-inner-wrapper">
                                                     <form data-form-id="61c798025725353bc7c7a329"
                                                           data-success-redirect="" autocomplete="on" method="POST"
-                                                          action="https://plane-heptagon-ag7f.squarespace.com"
                                                           novalidate onsubmit="return formSubmit(this);">
                                                         <div class="field-list clear">
                                                             <fieldset id="name-yui_3_17_2_1_1553888888520_3744" class="form-item fields name required">
@@ -702,7 +722,7 @@
                                                                 <div class="field first-name">
                                                                     <label class="caption">
                                                                         <input class="field-element field-control"
-                                                                               name="fname"
+                                                                               name="FirstName"
                                                                                x-autocompletetype="given-name"
                                                                                type="text" spellcheck="false"
                                                                                maxlength="30" data-title="First"
@@ -713,7 +733,7 @@
                                                                 <div class="field last-name">
                                                                     <label class="caption">
                                                                         <input class="field-element field-control"
-                                                                               name="lname" x-autocompletetype="surname"
+                                                                               name="LastName" x-autocompletetype="surname"
                                                                                type="text" spellcheck="false"
                                                                                maxlength="30" data-title="Last"
                                                                                aria-required="true"/>
@@ -729,7 +749,7 @@
                                                                 </label>
                                                                 <input class="field-element"
                                                                        id="email-yui_3_17_2_1_1553888888520_3745-field"
-                                                                       name="email" type="email" autocomplete="email"
+                                                                       name="Email" type="email" autocomplete="email"
                                                                        spellcheck="false" aria-required="true"/>
                                                             </div>
                                                             <div id="textarea-yui_3_17_2_1_1553888888520_3747"
@@ -738,11 +758,11 @@
                                                                     Message
                                                                     <span class="required" aria-hidden="true">*</span>
                                                                 </label>
-                                                                <textarea class="field-element " id="textarea-yui_3_17_2_1_1553888888520_3747-field" aria-required="true"></textarea>
+                                                                <textarea class="field-element" name="Message" id="textarea-yui_3_17_2_1_1553888888520_3747-field" aria-required="true"></textarea>
                                                             </div>
                                                         </div>
                                                         <div data-animation-role="button" class=" form-button-wrapper form-button-wrapper--align-left ">
-                                                            <input class="button sqs-system-button sqs-editable-button sqs-button-element--primary"
+                                                            <input id="submitButton" class="button sqs-system-button sqs-editable-button sqs-button-element--primary"
                                                                    type="submit" value="Send"/>
                                                         </div>
                                                         <div class="hidden form-submission-text">Thank you!</div>
