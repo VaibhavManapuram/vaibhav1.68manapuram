@@ -32,7 +32,7 @@
                     return "./" + ({
                         0: "vendors-background",
                         1: "background-image-fx-liquid~background-image-fx-parallax~background-image-fx-refracted-circles~backgr~31f89b22",
-                        2: "gallery-fullscreen-slideshow~gallery-slideshow~lightbox",
+                        2: "gallery-fullscreen-slideshow",
                         3: "vendors~lesson-video-native~product-gallery~video-background-native",
                         4: "user-items-list-banner-slideshow~user-items-list-carousel",
                         5: "vendors~lesson-video-native~video-background-native",
