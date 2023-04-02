@@ -51,7 +51,7 @@
                                 revolutionize the way we live, work, travel, shop, communicate, socialize, recover from ailments, etc.
                             </h3>
                         </div>
-                    </di v>
+                    </div>
                 </div>
             </section>
 
@@ -69,6 +69,54 @@
                     </div>
                 </div>
             </section>-->
+
+            <section data-aos="fade">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 d-flex flex-column justify-content-center">
+                            <span class="align-self-start">
+                                Notable milestones...
+                            </span>
+                            <h3>
+                                Enabled business growth at Victorious Future and Turbo Energy Private Limited.
+                                <br>
+                                Managed business relationships with fortune 500 companies: Tata Motors & Renault Nissan.
+                                <br>
+                                Managed multiple projects generating $11.6 million, in annual revenue.
+                            </h3>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img class="img-fluid" src="images/Duke_University_seal_BW.png"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-aos="fade">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <img class="img-fluid" src="./images/atvresized.jpg"/>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column justify-content-center">
+                            <span class="align-self-start">
+                               An Engineer before everything else…
+                            </span>
+                            <h3>
+                                Studied surface characteristics of additive manufacturing specimens,
+                                Created Mathematical models for surface finishing processes,
+                                Developed forecasting models using data analytics tools,
+                                <br>
+                                Worked with the Indian Railways and Optimized designs to address the structural issues in rolling stocks,
+                                <br>
+                                Designed a novel completely mechanized antilock braking system,
+                                <br>
+                                Designed and Fabricated a full-scale All-Terrain Vehicle.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section data-aos="fade">
                 <div class="container">
@@ -242,6 +290,79 @@
             AOS.init({
                 duration: 2000
             });
+
+            const sections = [
+                {
+                    imgSrc: "./images/d1-removebg.jpg",
+                    title: "",
+                    content: "A Program Management professional with a mechanical engineering perspective,\n" +
+                        "                                aspiring to work on cutting-edge tech products that\n" +
+                        "                                revolutionize the way we live, work, travel, shop, communicate, socialize, recover from ailments, etc.",
+                },
+                {
+                    imgSrc: "images/Duke_University_seal_BW.png",
+                    title: "",
+                    content: "Enabled business growth at Victorious Future and Turbo Energy Private Limited.\n" +
+                        "                                <br>\n" +
+                        "                                Managed business relationships with fortune 500 companies: Tata Motors & Renault Nissan.\n" +
+                        "                                <br>\n" +
+                        "                                Managed multiple projects generating $11.6 million, in annual revenue.",
+                },
+                {
+                    imgSrc: "./images/atvresized.jpg",
+                    title: "An Engineer before everything else…",
+                    content: "Studied surface characteristics of additive manufacturing specimens,\n" +
+                        "                                Created Mathematical models for surface finishing processes,\n" +
+                        "                                Developed forecasting models using data analytics tools,\n" +
+                        "                                <br>\n" +
+                        "                                Worked with the Indian Railways and Optimized designs to address the structural issues in rolling stocks,\n" +
+                        "                                <br>\n" +
+                        "                                Designed a novel completely mechanized antilock braking system,\n" +
+                        "                                <br>\n" +
+                        "                                Designed and Fabricated a full-scale All-Terrain Vehicle."
+                }
+            ];
+
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+
+                const imgDiv = $("<div>")
+                    .addClass(["col-md-4", "d-flex", "align-items-center"])
+                    .append(
+                        $("<img>")
+                            .addClass("img-fluid")
+                            .attr("src", section.imgSrc)
+                    );
+
+                const contentDiv = $("<div>")
+                    .addClass(["col-md-8", "d-flex", "flex-column", "justify-content-center"])
+                    .append(
+                        $("<span>")
+                            .addClass("align-self-start")
+                            .text(section.title)
+                    )
+                    .append(
+                        $("<h3>")
+                            .html(section.content)
+                    );
+
+                $("<section>")
+                    .data("aos", "fade")
+                    .append(
+                        $("<div>")
+                            .addClass("container")
+                            .append(
+                                $("<div>")
+                                    .addClass("row")
+                                    .append(() => i % 2 === 0 ? imgDiv : contentDiv)
+                                    .append(() => i % 2 === 0 ? contentDiv : imgDiv)
+                            )
+                    )
+                    .appendTo("body > main");
+
+            }
+
+
         </script>
     </body>
 </html>
