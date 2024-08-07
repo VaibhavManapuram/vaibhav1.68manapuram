@@ -147,6 +147,8 @@
             }
         ];
 
+        let imageAtRight = true;
+
         for (let i = 0; i < sections.length; i++) {
             const section = sections[i];
 
@@ -175,10 +177,13 @@
                     );
                 const rowDiv = $("<div>")
                     .addClass("row")
-                    .append(() => i % 2 === 0 ? imgDiv : contentDiv)
-                    .append(() => i % 2 === 0 ? contentDiv : imgDiv);
+                    .append(() => imageAtRight ? imgDiv : contentDiv)
+                    .append(() => imageAtRight ? contentDiv : imgDiv);
 
                 container.append(rowDiv);
+
+                imageAtRight = !imageAtRight;
+
             } else if(section.blockquote) {
                 const figure =
                     $("<figure>")
