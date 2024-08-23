@@ -114,24 +114,19 @@
             {
                 imgSrc: "./images/atvresized.jpg",
                 title: "An Engineer before everything else…",
-                content: "Studied surface characteristics of additive manufacturing specimens,\n" +
-                    "                                <br> <br>Created Mathematical models for surface finishing processes,\n" +
-                    "                                <br> <br>Developed forecasting models using data analytics tools,\n" +
-                    "                                <br><br>\n" +
-                    "                                Worked with the Indian Railways and Optimized designs to address the structural issues in rolling stocks,\n" +
-                    "                                <br><br>\n" +
-                    "                                Designed a novel completely mechanized antilock braking system,\n" +
-                    "                                <br> <br>\n" +
-                    "                                Designed and Fabricated a full-scale All-Terrain Vehicle."
+                content: "Studied surface characteristics of additive manufacturing specimens," +
+                    "<br>Created Mathematical models for surface finishing processes," +
+                    "<br>Developed forecasting models using data analytics tools," +
+                    "<br>Worked with the Indian Railways and Optimized designs to address the structural issues in rolling stocks," +
+                    "<br>Designed a novel completely mechanized antilock braking system," +
+                    "<br>Designed and Fabricated a full-scale All-Terrain Vehicle."
             },
             {
                 imgSrc: "./images/TEDxRMKEC4.jpg",
                 title: "Ideas worth spreading...",
-                content: "I strongly resonate with the idea of TED as the platform promotes the exchange of ideas,\n" +
-                    "                                sparks conversations, and inspires people to solve global issues.\n" +
-                    "                                <br><br>\n" +
-                    "                                I initiated and organized TEDx RMKEC, the first-ever TEDx event at my college as\n" +
-                    "                                I felt that the student community would greatly benefit from such an empowering platform."
+                content: "I strongly resonate with the idea of TED as the platform promotes the exchange of ideas, sparks conversations, and inspires people to solve global issues." +
+                    " <br><br>" +
+                    "I initiated and organized TEDx RMKEC, the first-ever TEDx event at my college as I felt that the student community would greatly benefit from such an empowering platform."
             },
             {
                 title: "Richard P. Feynman",
@@ -175,7 +170,7 @@
 
             if(section.content) {
 
-                const contentDiv = $("<div>")
+                const contentDiv = $("<div  style='padding: 2em'>")
                     .addClass(["col-md-8", "d-flex", "flex-column", "justify-content-center"])
                     .append(
                         $("<span>")
@@ -183,7 +178,7 @@
                             .text(section.title)
                     )
                     .append(
-                        $("<h3>")
+                        $(`<p style='line-height: 200%;font-size: ${section.content.length <= 350 ? 40 : (1- ((section.content.length - 350) / 350 )) * 40}px;'>`)
                             .html(section.content)
                     );
                 const rowDiv = $("<div>")
