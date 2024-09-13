@@ -41,7 +41,7 @@
         <span class="fs-1 px-3">Vaibhav Manapuram</span>
     </header>
 
-    <main></main>
+    <main style="scroll-snap-type: y mandatory;"></main>
 
     <footer class="text-center py-5">
         Connect with me on <a href="https://in.linkedin.com/in/vaibhav-manapuram-070ab3128">LinkedIn</a>
@@ -235,7 +235,7 @@
             }
 
 
-            $("<section>")
+            $("<section style="scroll-snap-align: start;">")
                 .attr("data-aos", "fade")
                 .append(container).appendTo("main");
 
