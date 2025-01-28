@@ -24,7 +24,7 @@ function renderSections(sections) {
                         .html(section.title)
                 )
                 .append(
-                    $(`<p style='font-size: 22px;'>`)
+                    $(`<p style='font-size: 22px;text-align: justify;'>`)
                         .html(section.content)
                 );
             const rowDiv = $("<div>")
